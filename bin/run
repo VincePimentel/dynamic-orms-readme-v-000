@@ -4,20 +4,9 @@ require 'sqlite3'
 require_relative "../lib/song.rb"
 require_relative "../config/environment.rb"
 
-
 song = Song.new(name: "Hello", album: "25")
 puts "song name: " + song.name
 puts "song album: " + song.album
 song.save
-
-song1 = Song.new(name: "Hello1", album: "251")
-puts "song name: " + song1.name
-puts "song album: " + song1.album
-song1.save
-
-song2 = Song.new(name: "Hello2", album: "252")
-puts "song name: " + song2.name
-puts "song album: " + song2.album
-song2.save
 
 DB[:conn].execute("SELECT * FROM songs")
