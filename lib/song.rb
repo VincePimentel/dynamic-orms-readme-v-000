@@ -7,7 +7,6 @@ class Song
 
   def self.table_name
     self.to_s.downcase.pluralize
-    binding.pry
   end
 
   def self.column_names
@@ -21,6 +20,7 @@ class Song
       column_names << row["name"]
     end
     column_names.compact
+    binding.pry
   end
 
   self.column_names.each do |col_name|
@@ -61,6 +61,3 @@ class Song
   end
 
 end
-
-
-
